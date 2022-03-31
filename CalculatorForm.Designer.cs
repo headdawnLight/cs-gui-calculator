@@ -1,7 +1,7 @@
 ﻿
 namespace cs_gui_calculator
 {
-    partial class Form1
+    partial class CalculatorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace cs_gui_calculator
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             this.NumBtn0 = new System.Windows.Forms.Button();
             this.NumBtn1 = new System.Windows.Forms.Button();
             this.NumBtn2 = new System.Windows.Forms.Button();
@@ -41,7 +41,7 @@ namespace cs_gui_calculator
             this.NumBtn8 = new System.Windows.Forms.Button();
             this.NumBtn9 = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
-            this.ClearEndButton = new System.Windows.Forms.Button();
+            this.ClearEntryButton = new System.Windows.Forms.Button();
             this.BackspaceButton = new System.Windows.Forms.Button();
             this.EulerExpoButton = new System.Windows.Forms.Button();
             this.ExpoButton = new System.Windows.Forms.Button();
@@ -67,7 +67,7 @@ namespace cs_gui_calculator
             this.NumBtn0.TabIndex = 22;
             this.NumBtn0.Text = "0";
             this.NumBtn0.UseVisualStyleBackColor = true;
-            this.NumBtn0.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn0.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn1
             // 
@@ -78,7 +78,7 @@ namespace cs_gui_calculator
             this.NumBtn1.TabIndex = 17;
             this.NumBtn1.Text = "1";
             this.NumBtn1.UseVisualStyleBackColor = true;
-            this.NumBtn1.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn1.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn2
             // 
@@ -89,7 +89,7 @@ namespace cs_gui_calculator
             this.NumBtn2.TabIndex = 18;
             this.NumBtn2.Text = "2";
             this.NumBtn2.UseVisualStyleBackColor = true;
-            this.NumBtn2.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn2.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn3
             // 
@@ -100,7 +100,7 @@ namespace cs_gui_calculator
             this.NumBtn3.TabIndex = 19;
             this.NumBtn3.Text = "3";
             this.NumBtn3.UseVisualStyleBackColor = true;
-            this.NumBtn3.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn3.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn4
             // 
@@ -111,7 +111,7 @@ namespace cs_gui_calculator
             this.NumBtn4.TabIndex = 13;
             this.NumBtn4.Text = "4";
             this.NumBtn4.UseVisualStyleBackColor = true;
-            this.NumBtn4.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn4.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn5
             // 
@@ -122,7 +122,7 @@ namespace cs_gui_calculator
             this.NumBtn5.TabIndex = 14;
             this.NumBtn5.Text = "5";
             this.NumBtn5.UseVisualStyleBackColor = true;
-            this.NumBtn5.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn5.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn6
             // 
@@ -133,7 +133,7 @@ namespace cs_gui_calculator
             this.NumBtn6.TabIndex = 15;
             this.NumBtn6.Text = "6";
             this.NumBtn6.UseVisualStyleBackColor = true;
-            this.NumBtn6.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn6.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn7
             // 
@@ -144,7 +144,7 @@ namespace cs_gui_calculator
             this.NumBtn7.TabIndex = 9;
             this.NumBtn7.Text = "7";
             this.NumBtn7.UseVisualStyleBackColor = true;
-            this.NumBtn7.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn7.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn8
             // 
@@ -155,7 +155,7 @@ namespace cs_gui_calculator
             this.NumBtn8.TabIndex = 10;
             this.NumBtn8.Text = "8";
             this.NumBtn8.UseVisualStyleBackColor = true;
-            this.NumBtn8.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn8.Click += new System.EventHandler(this.Number_Click);
             // 
             // NumBtn9
             // 
@@ -166,7 +166,7 @@ namespace cs_gui_calculator
             this.NumBtn9.TabIndex = 11;
             this.NumBtn9.Text = "9";
             this.NumBtn9.UseVisualStyleBackColor = true;
-            this.NumBtn9.Click += new System.EventHandler(this.Button_Click);
+            this.NumBtn9.Click += new System.EventHandler(this.Number_Click);
             // 
             // ClearButton
             // 
@@ -174,21 +174,21 @@ namespace cs_gui_calculator
             this.ClearButton.Location = new System.Drawing.Point(88, 118);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(70, 40);
-            this.ClearButton.TabIndex = 3;
+            this.ClearButton.TabIndex = 2;
             this.ClearButton.Text = "C";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // ClearEndButton
+            // ClearEntryButton
             // 
-            this.ClearEndButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ClearEndButton.Location = new System.Drawing.Point(164, 118);
-            this.ClearEndButton.Name = "ClearEndButton";
-            this.ClearEndButton.Size = new System.Drawing.Size(70, 40);
-            this.ClearEndButton.TabIndex = 2;
-            this.ClearEndButton.Text = "CE";
-            this.ClearEndButton.UseVisualStyleBackColor = true;
-            this.ClearEndButton.Click += new System.EventHandler(this.ClearEndButton_Click);
+            this.ClearEntryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClearEntryButton.Location = new System.Drawing.Point(164, 118);
+            this.ClearEntryButton.Name = "ClearEntryButton";
+            this.ClearEntryButton.Size = new System.Drawing.Size(70, 40);
+            this.ClearEntryButton.TabIndex = 3;
+            this.ClearEntryButton.Text = "CE";
+            this.ClearEntryButton.UseVisualStyleBackColor = true;
+            this.ClearEntryButton.Click += new System.EventHandler(this.ClearEntryButton_Click);
             // 
             // BackspaceButton
             // 
@@ -207,7 +207,7 @@ namespace cs_gui_calculator
             this.EulerExpoButton.Location = new System.Drawing.Point(12, 118);
             this.EulerExpoButton.Name = "EulerExpoButton";
             this.EulerExpoButton.Size = new System.Drawing.Size(70, 40);
-            this.EulerExpoButton.TabIndex = 5;
+            this.EulerExpoButton.TabIndex = 1;
             this.EulerExpoButton.Text = "eⁿ";
             this.EulerExpoButton.UseVisualStyleBackColor = true;
             // 
@@ -227,7 +227,7 @@ namespace cs_gui_calculator
             this.SqrRootButton.Location = new System.Drawing.Point(12, 164);
             this.SqrRootButton.Name = "SqrRootButton";
             this.SqrRootButton.Size = new System.Drawing.Size(70, 40);
-            this.SqrRootButton.TabIndex = 7;
+            this.SqrRootButton.TabIndex = 5;
             this.SqrRootButton.Text = "√x";
             this.SqrRootButton.UseVisualStyleBackColor = true;
             // 
@@ -237,7 +237,7 @@ namespace cs_gui_calculator
             this.FactorialButton.Location = new System.Drawing.Point(164, 164);
             this.FactorialButton.Name = "FactorialButton";
             this.FactorialButton.Size = new System.Drawing.Size(70, 40);
-            this.FactorialButton.TabIndex = 1;
+            this.FactorialButton.TabIndex = 7;
             this.FactorialButton.Text = "x!";
             this.FactorialButton.UseVisualStyleBackColor = true;
             // 
@@ -316,7 +316,7 @@ namespace cs_gui_calculator
             this.CommaButton.TabIndex = 23;
             this.CommaButton.Text = ",";
             this.CommaButton.UseVisualStyleBackColor = true;
-            this.CommaButton.Click += new System.EventHandler(this.Button_Click);
+            this.CommaButton.Click += new System.EventHandler(this.Number_Click);
             // 
             // operationLabel
             // 
@@ -324,8 +324,10 @@ namespace cs_gui_calculator
             this.operationLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.operationLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.operationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.operationLabel.ForeColor = System.Drawing.SystemColors.WindowText;
             this.operationLabel.Location = new System.Drawing.Point(12, 9);
             this.operationLabel.Name = "operationLabel";
+            this.operationLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.operationLabel.Size = new System.Drawing.Size(298, 48);
             this.operationLabel.TabIndex = 25;
             this.operationLabel.Text = "0";
@@ -336,22 +338,25 @@ namespace cs_gui_calculator
             this.textBoxNumbers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxNumbers.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxNumbers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxNumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBoxNumbers.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxNumbers.Location = new System.Drawing.Point(12, 63);
             this.textBoxNumbers.MaxLength = 26;
             this.textBoxNumbers.Name = "textBoxNumbers";
+            this.textBoxNumbers.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxNumbers.Size = new System.Drawing.Size(298, 49);
             this.textBoxNumbers.TabIndex = 0;
             this.textBoxNumbers.Text = "0";
             this.textBoxNumbers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // Form1
+            // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(322, 400);
-            
             this.Controls.Add(this.NumBtn0);
             this.Controls.Add(this.NumBtn1);
             this.Controls.Add(this.NumBtn2);
@@ -363,13 +368,13 @@ namespace cs_gui_calculator
             this.Controls.Add(this.NumBtn8);
             this.Controls.Add(this.NumBtn9);
             this.Controls.Add(this.ClearButton);
-            this.Controls.Add(this.ClearEndButton);
-            this.Controls.Add(this.BackspaceButton); 
+            this.Controls.Add(this.ClearEntryButton);
+            this.Controls.Add(this.BackspaceButton);
             this.Controls.Add(this.EulerExpoButton);
             this.Controls.Add(this.ExpoButton);
             this.Controls.Add(this.SqrRootButton);
             this.Controls.Add(this.FactorialButton);
-            this.Controls.Add(this.MultiplyButton);           
+            this.Controls.Add(this.MultiplyButton);
             this.Controls.Add(this.DivButton);
             this.Controls.Add(this.SubButton);
             this.Controls.Add(this.AddButton);
@@ -381,7 +386,7 @@ namespace cs_gui_calculator
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "CalculatorForm";
             this.Text = "CS-GUI-CALCULATOR";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -401,7 +406,7 @@ namespace cs_gui_calculator
         private System.Windows.Forms.Button NumBtn8;
         private System.Windows.Forms.Button NumBtn9;
         private System.Windows.Forms.Button ClearButton;
-        private System.Windows.Forms.Button ClearEndButton;
+        private System.Windows.Forms.Button ClearEntryButton;
         private System.Windows.Forms.Button BackspaceButton;
         private System.Windows.Forms.Button EulerExpoButton;
         private System.Windows.Forms.Button ExpoButton;

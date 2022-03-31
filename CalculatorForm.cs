@@ -10,35 +10,45 @@ using System.Windows.Forms;
 
 namespace cs_gui_calculator
 {
-    public partial class Form1 : Form
+    public partial class CalculatorForm : Form
     {
         Double resultValue = 0;
         String operationPerformed = "";
         bool isOperationPerformed = false;
 
-        public Form1()
+        public CalculatorForm()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, EventArgs e)
+        // Runs the number and comma buttons
+        private void Number_Click(object sender, EventArgs e)
         {
             if ((textBoxNumbers.Text == "0") || (isOperationPerformed))
                 textBoxNumbers.Clear();
 
-            isOperationPerformed = false;
+                isOperationPerformed = false;
 
             Button Button = (Button)sender;
-            textBoxNumbers.Text += Button.Text;
+
+            if (Button.Text == ",")
+            {
+                if (!textBoxNumbers.Text.Contains(","))
+                    textBoxNumbers.Text += Button.Text;
+            }
+            else 
+            { 
+                textBoxNumbers.Text += Button.Text;
+            }
         }
 
+        // Run the addition, subtraction, multiplication and divide operators
         private void Operator_Click(object sender, EventArgs e)
         {
             Button Button = (Button)sender;
 
             if (resultValue != 0)
             {
-                EqualButton.PerformClick();
                 operationPerformed = Button.Text;
                 operationLabel.Text = resultValue + operationPerformed;
                 isOperationPerformed = true;
@@ -52,6 +62,7 @@ namespace cs_gui_calculator
             }
         }
 
+        // Runs the clear button
         private void ClearButton_Click(object sender, EventArgs e)
         {
             textBoxNumbers.Text = "0";
@@ -59,11 +70,13 @@ namespace cs_gui_calculator
             resultValue = 0;
         }
 
-        private void ClearEndButton_Click(object sender, EventArgs e)
+        // Runs the clear entry button
+        private void ClearEntryButton_Click(object sender, EventArgs e)
         {
             textBoxNumbers.Text = "0";
         }
 
+        // Runs the backspace button
         private void BackspaceButton_Click(object sender, EventArgs e)
         {
             if (textBoxNumbers.TextLength > 1)
@@ -76,6 +89,7 @@ namespace cs_gui_calculator
             }
         }
 
+        // Runs the sign button
         private void SignButton_Click(object sender, EventArgs e)
         {
             if (textBoxNumbers.Text.StartsWith("-"))
@@ -90,6 +104,7 @@ namespace cs_gui_calculator
             }
         }
 
+        // Runs the equal button
         private void EqualButton_Click(object sender, EventArgs e)
         {
             switch (operationPerformed)
@@ -109,8 +124,6 @@ namespace cs_gui_calculator
             }
             resultValue = Double.Parse(textBoxNumbers.Text);
             operationLabel.Text = resultValue + operationPerformed;
-            textBoxNumbers.Text = "0";
-            isOperationPerformed = true;
         }
     }
 }
