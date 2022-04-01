@@ -24,39 +24,30 @@ namespace cs_gui_calculator
         // Runs the number and comma buttons
         private void Number_Click(object sender, EventArgs e)
         {
-            if ((textBoxNumbers.Text == "0") || (isOperationPerformed))
-                textBoxNumbers.Clear();
+            if ((numBox.Text == "0") || (isOperationPerformed))
+                numBox.Clear();
 
-                isOperationPerformed = false;
+            isOperationPerformed = false;
 
-            Button Button = (Button)sender;
-
-            if (Button.Text == ",")
-            {
-                if (!textBoxNumbers.Text.Contains(","))
-                    textBoxNumbers.Text += Button.Text;
-            }
-            else 
-            { 
-                textBoxNumbers.Text += Button.Text;
-            }
+            Button numbers = (Button)sender;
+            numBox.Text += numbers.Text;
         }
 
-        // Run the addition, subtraction, multiplication and divide operators
+        // Runs the addition, subtraction, multiplication and divide operators
         private void Operator_Click(object sender, EventArgs e)
         {
-            Button Button = (Button)sender;
+            Button operators = (Button)sender;
 
             if (resultValue != 0)
             {
-                operationPerformed = Button.Text;
+                operationPerformed = operators.Text;
                 operationLabel.Text = resultValue + operationPerformed;
                 isOperationPerformed = true;
             }
             else
             {
-                operationPerformed = Button.Text;
-                resultValue = Double.Parse(textBoxNumbers.Text);
+                operationPerformed = operators.Text;
+                resultValue = Double.Parse(numBox.Text);
                 operationLabel.Text = resultValue + operationPerformed;
                 isOperationPerformed = true;
             }
@@ -65,42 +56,62 @@ namespace cs_gui_calculator
         // Runs the clear button
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            textBoxNumbers.Text = "0";
             operationLabel.Text = "0";
+            numBox.Text = "0";
             resultValue = 0;
         }
 
         // Runs the clear entry button
         private void ClearEntryButton_Click(object sender, EventArgs e)
         {
-            textBoxNumbers.Text = "0";
+            numBox.Text = "0";
         }
 
         // Runs the backspace button
         private void BackspaceButton_Click(object sender, EventArgs e)
         {
-            if (textBoxNumbers.TextLength > 1)
+            if (numBox.Text.Length > 1)
             {
-                textBoxNumbers.Text = textBoxNumbers.Text.Substring(0, (textBoxNumbers.Text.Length - 1));
+                numBox.Text = numBox.Text.Substring(0, (numBox.Text.Length - 1));
             }
             else
             {
-                textBoxNumbers.Text = "0";
+                numBox.Text = "0";
+            }
+        }
+
+        // Runs the comma button
+        private void Comma_Click(object sender, EventArgs e)
+        {
+            if (CommaButton.Text == ",")
+            {
+                if (!numBox.Text.Contains(","))
+                    numBox.Text += CommaButton.Text;
+            }
+            else
+            {
+                numBox.Text += CommaButton.Text;
             }
         }
 
         // Runs the sign button
         private void SignButton_Click(object sender, EventArgs e)
         {
-            if (textBoxNumbers.Text.StartsWith("-"))
+            double textNum = Double.Parse(numBox.Text);
+
+            int sign = Math.Sign(textNum);
+
+            if (sign == 1)
             {
-                //It's negative now, so strip the `-` sign to make it positive
-                textBoxNumbers.Text = textBoxNumbers.Text.Substring(1);
+                numBox.Text = (textNum * (-1)).ToString();
             }
-            else if (!string.IsNullOrEmpty(textBoxNumbers.Text) && decimal.Parse(textBoxNumbers.Text) != 0)
+            else if (sign == -1)
             {
-                //It's positive now, so prefix the value with the `-` sign to make it negative
-                textBoxNumbers.Text = "-" + textBoxNumbers.Text;
+                numBox.Text = (textNum * (-1)).ToString();
+            }
+            else if (sign == 0)
+            {
+                numBox.Text = "0";
             }
         }
 
@@ -110,20 +121,21 @@ namespace cs_gui_calculator
             switch (operationPerformed)
             {
                 case "+":
-                    textBoxNumbers.Text = (resultValue + Double.Parse(textBoxNumbers.Text)).ToString();
+                    numBox.Text = (resultValue + Double.Parse(numBox.Text)).ToString();
                     break;
                 case "-":
-                    textBoxNumbers.Text = (resultValue - Double.Parse(textBoxNumbers.Text)).ToString();
+                    numBox.Text = (resultValue - Double.Parse(numBox.Text)).ToString();
                     break;
                 case "*":
-                    textBoxNumbers.Text = (resultValue * Double.Parse(textBoxNumbers.Text)).ToString();
+                    numBox.Text = (resultValue * Double.Parse(numBox.Text)).ToString();
                     break;
                 case "/":
-                    textBoxNumbers.Text = (resultValue / Double.Parse(textBoxNumbers.Text)).ToString();
+                    numBox.Text = (resultValue / Double.Parse(numBox.Text)).ToString();
                     break;
             }
-            resultValue = Double.Parse(textBoxNumbers.Text);
+            resultValue = Double.Parse(numBox.Text);
             operationLabel.Text = resultValue + operationPerformed;
+            isOperationPerformed = true;
         }
     }
 }
